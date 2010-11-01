@@ -9,7 +9,7 @@ module Jquery
           jq_defaults = %w(jquery jquery-ui)
           jq_defaults.map!{|a| a + ".min" } if ::Rails.env.production?
         else
-          jq_defaults = ::Rails.env.production? ? %w(jquery.min) : %w(jquery)
+          jq_defaults =  %w(https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js)
         end
 
         config.action_view.javascript_expansions[:defaults] = jq_defaults + %w(rails)
